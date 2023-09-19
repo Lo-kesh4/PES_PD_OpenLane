@@ -610,9 +610,7 @@ ordering of input and output ports are random
 
 ### steps to run flooeplan using openLANE
 
-
-![Screenshot from 2023-09-17 16-12-49](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/bbbb77b4-eff2-44e2-9418-3c2f43912534)
-
+![Screenshot from 2023-09-19 11-59-00](https://github.com/Lo-kesh4/PES_PD_OpenLane/assets/131575546/0a9c2630-698d-4825-84e0-ed2b5ea865a7)
 
 
 
@@ -731,10 +729,6 @@ Repeaters are buffer which recondition the original signal ,replicated original 
 
 
 ### congestion aware placement using RePlAce 
-
-
-![Screenshot from 2023-09-17 20-12-48](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/eef5d057-2790-4eae-9861-4126580a0b71)
-
 
 
 ![Screenshot from 2023-09-17 20-13-09](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/6a2a1c0c-ea18-4fcc-8fae-4f361ffbf696)
@@ -971,16 +965,7 @@ complete description of NMOS and PMOS:   .LIB "tsmc_025um_model.mod" CMOS+MODELS
 
 
 
-![Screenshot from 2023-09-18 07-56-53](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/c4d98e6e-7862-405a-aa3b-4a51fe778152)
-
-
 magic -T sky130A.tech sky130_inv.mag &
-
-
-![Screenshot from 2023-09-18 07-54-28](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/a4cd4cc1-8af6-4eac-91a1-50832051e096)
-
-
-![Screenshot from 2023-09-18 07-54-02](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/b98b6191-232c-420c-822b-a7497a030ceb)
 
 
 
@@ -1086,8 +1071,6 @@ the area which area protected by the mask will be washed out
 
 
 
-![Screenshot from 2023-09-18 12-01-06](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/0d303aca-29a1-4203-91cb-6a12c9c1c787)
-
 to check the error in the layout
 
 - drc--->drc find error
@@ -1107,8 +1090,6 @@ to check the error in the layout
 to copy the parasitic capacitance we do **ext2spice cthresh 0 rthresh 0**
 
 
-![Screenshot from 2023-09-18 12-14-36](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/f86453c2-9a35-43e7-a4e1-330d4d854ce3)
-
 We can observe sky130_inv.ext file is created
 
 
@@ -1118,8 +1099,6 @@ We can observe sky130_inv.ext file is created
 <summary> Sky130 Tech File Labs</summary>
 
 ### Lab Steps to create final SPICE deck using sky130 tech
-
-![Screenshot from 2023-09-18 13-51-16](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/375c2058-04d7-4f36-9ad8-62782443a1e8)
 
 press g for grid
 
@@ -1137,8 +1116,6 @@ to acess the spice file
 ### Lab Steps to characterize  inverter using sky130 model files
 
 ngspice sky130_inv.spice : to access the ngspice file
-
-![Screenshot from 2023-09-18 14-01-16](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/11c377d7-e790-48e3-9676-3cd0cd71ba0b)
 
 
 
@@ -1170,10 +1147,6 @@ Rise Time: time taken to rise from 20% to 80% of the max value -> 2.25075e-09 - 
 
 - magic -d XR
 
-
-![Screenshot from 2023-09-18 14-29-49](https://github.com/vishnupriyapesu/pes_pd/assets/142419649/e2b405e6-a86e-44bf-bc19-940c0dd84b6d)
-
-
 now go to the files open met3.mag
 
 
@@ -1202,7 +1175,8 @@ Track info can be found at :
 
 ``` ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130fd_sc_hd/tracks.info```
 
-![image](https://github.com/yagnavivek/PES_OpenLane_PD/assets/93475824/3b8e5311-039d-4351-be5c-6f6ec5ba7a84)
+![image](https://github.com/Lo-kesh4/PES_PD_OpenLane/assets/131575546/0dc00df1-ec8c-4796-ba3b-ecc0a3873fef)
+
 
 - 1st value indicates the offset and 2nd value indicates the pitch along provided direction
 
@@ -1231,17 +1205,15 @@ Since the layout is perfect, we can generate the lef file
    - Open using ``` magic -T sky130A.tch sky130_vsdinv.mag```
    - in the console opened, type ```lef write``` and a lef file will be generated
 
-![image](https://github.com/yagnavivek/PES_OpenLane_PD/assets/93475824/02952069-8336-47d6-a94b-7798300139fc)
+![image](https://github.com/Lo-kesh4/PES_PD_OpenLane/assets/131575546/7b9f664d-a6ec-41f2-a5f5-d4b8c8e70a85)
 
 #### 3. Plug the generated lef file into PICORV32a
 
 To do this, we need the lef file, library file that has cells
-![image](https://github.com/yagnavivek/PES_OpenLane_PD/assets/93475824/00f25603-333a-4fed-9624-73b2737ec4fc)
 
 Change config file so that these libraries and lef file is used
 
-![Screenshot from 2023-09-14 15-46-16](https://github.com/yagnavivek/PES_OpenLane_PD/assets/93475824/7b474efc-df06-4cb8-8794-005226e4933c)
-
+![image](https://github.com/Lo-kesh4/PES_PD_OpenLane/assets/131575546/3485c9c3-bcf8-4a6e-ab54-16668bb19ad2)
 
 #### 4. Make sure the lef file is added
 
@@ -1249,7 +1221,7 @@ add the below 2 lines in the initial stage of interactive flow and ```run_synthe
 
 ![2lines](https://github.com/yagnavivek/PES_OpenLane_PD/assets/93475824/1c964f50-cefe-426f-9104-4562a1aab570)
 
-![Screenshot from 2023-09-14 15-56-41](https://github.com/yagnavivek/PES_OpenLane_PD/assets/93475824/6ecd11e0-7b09-4966-9e36-897348896515)
+![image](https://github.com/Lo-kesh4/PES_PD_OpenLane/assets/131575546/d8cbc0fe-127e-4d3b-a05c-49e07b5bbe2b)
 
 The above figure shows that our vsdinv cell has been used in synthesis process
 
@@ -1282,7 +1254,7 @@ For the design to be complete, the worst negative slack needs to be above or equ
 
     - We can see which net is driving most outputs and replace the driver cell with larger form of its own kind
 
-    ![image](https://github.com/yagnavivek/PES_OpenLane_PD/assets/93475824/f4e05f1d-0c2c-404a-8b43-6b82a097d73d)
+    [image](https://github.com/yagnavivek/PES_OpenLane_PD/assets/93475824/f4e05f1d-0c2c-404a-8b43-6b82a097d73d)
 
 4. Optimize the fanout value with OpenLANE tool
 
@@ -1297,8 +1269,7 @@ Since we have synthesised the core using our vsdinv cell too and as it got succe
 - now in the openlane flow, continue with ```run_flooorplan``` ```run_placement``` ```run_cts```
 
 - To ensure that the cts step has added buffers and modified the netlist
-    ![image](https://github.com/yagnavivek/PES_OpenLane_PD/assets/93475824/69ddb549-d4bb-41e0-836c-686f2c375b1c)
-
+    
 ## Post CTS- STA Analysis
 
 OpenLANE has the OpenROAD application integrated into its flow. The OpenROAD application has OpenSTA integrated into its flow. Therefore, we can perform STA analysis from within OpenLANE by invoking OpenROAD.
