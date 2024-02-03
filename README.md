@@ -1349,7 +1349,6 @@ python3 main.py <path to merged.lef in tmp> <path to def in routing>
 
 The SPEF File will be generated in the location where def file is present
 
-[BACK TO TOP](https://github.com/yagnavivek/PES_OpenLane_PD#to-enter-the-automated-flow-use-these-commands)
 
 
 </details>
